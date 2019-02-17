@@ -6,11 +6,11 @@ const Greeting = () => {
     const date = new Date();
     let hour = date.getHours();
     let greeting;
-    if (hour >= 6 && hour <= 13) {
+    if (hour >= 6 && hour <= 12) {
         greeting = 'morning';
         styles.background = "#FF7F50"
     }
-    if (hour >= 13 && hour <= 17) {
+    if (hour >= 12 && hour <= 17) {
         greeting = 'day';
         styles.background = "#228B22"
     }
@@ -24,7 +24,7 @@ const Greeting = () => {
     }
     return (
         <div>
-            <h1 style={styles}>Good {greeting}!</h1>
+            <h1 className="Greeting" style={styles}>Good {greeting}!</h1>
         </div>
     )
 };
