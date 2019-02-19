@@ -48,3 +48,23 @@ input[type=checkbox]:focus {
     text-align: center;
     font-size: 50px;
 }
+
+.image {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+
+.Motivation {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    list-style-type: none;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-family: Roboto, sans-serif;
+    font-weight: 100;
+    font-size: 15px;
+    color: #333333;
+    text-align: center;
+}

@@ -1,6 +1,6 @@
 import React from 'react';
 import skeleton from './skeleton.gif'
-import tomato from './tomato.png'
+import tomato from './tomato.gif'
 import morning from './morning.gif'
 
 let motCards = [
@@ -8,7 +8,7 @@ let motCards = [
         id: 1,
         image: morning,
         question: 'Выспался?',
-        advice: 'Попробуй лечь хоть раз раньше полуночи!',
+        advice: 'Попробуй хоть раз лечь раньше полуночи!',
     },
     {
         id: 2,
@@ -28,7 +28,7 @@ class MotivationCard extends React.Component {
     render() {
         return (
             <li>
-                <img src={this.props.image} alt="картинка"/>
+                <img className="image" src={this.props.image} alt="картинка"/>
                 <div>{this.props.question}</div>
                 <div>{this.props.advice}</div>
             </li>
@@ -38,7 +38,7 @@ class MotivationCard extends React.Component {
 
 function Motivation() {
     return (
-        <ul>
+        <ul className="Motivation">
             {
                 motCards.map(el => <MotivationCard
                 key={el.id}
