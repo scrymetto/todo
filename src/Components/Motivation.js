@@ -13,7 +13,7 @@ let motCards = [
     {
         id: 2,
         image: tomato,
-        question: 'Сколько помидорок посвятил JavaScript?',
+        question: 'Сколько помидорок ты посвятил JavaScript?',
         advice: 'Самое время ставить рекорды!',
     },
     {
