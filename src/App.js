@@ -10,11 +10,7 @@ class App extends Component {
             <div>
                 <Greeting className="Greeting"/>
                 <div className="todo-list">
-                <Checkbox/>
-                <Checkbox/>
-                <Checkbox/>
-                <Checkbox/>
-                <Checkbox/>
+                    <Checkbox/>
                 </div>
                 <div>
                     <Motivation/>
