@@ -3,6 +3,7 @@ import './App.css';
 import Checkbox from './Components/Checkbox'
 import Greeting from './Components/Greeting'
 import Motivation from './Components/Motivation'
+import TomatoCounter from './Components/TomatoCounter'
 
 class App extends Component {
     render() {
@@ -14,6 +15,9 @@ class App extends Component {
                 </div>
                 <div>
                     <Motivation/>
+                </div>
+                <div>
+                    <TomatoCounter/>
                 </div>
             </div>
         );
