@@ -3,7 +3,7 @@ import './App.css';
 import Checkbox from './Components/Checkbox'
 import Greeting from './Components/Greeting'
 import Motivation from './Components/Motivation'
-import TomatoCounter from './Components/TomatoCounter'
+import RandomWord from './Components/words/RandomWord'
 
 class App extends Component {
     render() {
@@ -17,7 +17,7 @@ class App extends Component {
                     <Motivation/>
                 </div>
                 <div>
-                    <TomatoCounter/>
+                    <RandomWord/>
                 </div>
             </div>
         );
