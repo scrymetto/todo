@@ -1,3 +1,5 @@
+@charset "utf-8";
+
 body {
     background-color: whitesmoke;
     margin: 0;
@@ -67,4 +69,34 @@ input[type=checkbox]:focus {
     font-size: 15px;
     color: #333333;
     text-align: center;
+}
+
+.wordList {
+    list-style: none;
+    flex-direction: column;
+}
+
+.wordEN {
+    list-style: none;
+    background: url("./Components/words/united-kingdom.png") no-repeat 0 4px;
+    background-size: 50px;
+    height: 60px;
+    padding-left: 60px;
+    line-height: 50px;
+}
+
+.wordDE {
+    list-style: none;
+    background: url("./Components/words/germany.png") no-repeat 0 4px;;
+    background-size: 50px;
+    height: 60px;
+    padding-left: 60px;
+    line-height: 50px;
+}
+
+.Content {
+    width: 75%;
+    display: flex;
+    align-items: center;
+    padding-bottom: 75px;
 }

@@ -31,7 +31,7 @@ class Checkbox extends React.Component {
                             key={el.id}
                             text={el.text}
                             completed={el.completed}
-                                                    />
+                        />
                     )
                 }
             </div>

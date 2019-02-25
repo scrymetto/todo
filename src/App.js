@@ -10,15 +10,19 @@ class App extends Component {
         return (
             <div>
                 <Greeting className="Greeting"/>
-                <div className="todo-list">
-                    <Checkbox/>
+                <div className="Content">
+                    <div className="todo-list">
+                        <h2>Список дел:</h2>
+                        <Checkbox/>
+                    </div>
+                    <div>
+                        <RandomWord/>
+                    </div>
                 </div>
                 <div>
                     <Motivation/>
                 </div>
-                <div>
-                    <RandomWord/>
-                </div>
+
             </div>
         );
     }
