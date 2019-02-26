@@ -1,10 +1,12 @@
 import React from 'react';
 import todosData from './todosData'
+import Checkbox from '@material-ui/core/Checkbox';
 
 function CheckCard(props) {
     return (
         <div className="todo-item">
-            <input type="checkbox"
+            <Checkbox
+                defaultChecked color="default"
                    checked={props.completed}
                    onChange={() => console.log('Changed!')}/>
             <p>{props.text}</p>
@@ -12,7 +14,7 @@ function CheckCard(props) {
     )
 }
 
-class Checkbox extends React.Component {
+class CheckboxBig extends React.Component {
 
     constructor() {
         super();
@@ -39,4 +41,4 @@ class Checkbox extends React.Component {
     }
 }
 
-export default Checkbox;
+export default CheckboxBig;

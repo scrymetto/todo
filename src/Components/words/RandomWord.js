@@ -1,5 +1,6 @@
 import React from 'react';
 import WORDS from './words';
+import Button from '@material-ui/core/Button';
 
 
 class RandomWord extends React.Component {
@@ -28,7 +29,8 @@ class RandomWord extends React.Component {
                     <li className="wordEN">{this.state.word.wrd}</li>
                     <li className="wordDE">{this.state.word.deu}</li>
                 </ul>
-                <button onClick={this.handleClick}>Хочу ещё!</button>
+                <Button variant="raised"
+                onClick = {this.handleClick}>Хочу ещё!</Button>
             </div>
         )
     }
