@@ -6,13 +6,14 @@ function CheckCard(props) {
     return (
         <div className="todo-item">
             <Checkbox
-                defaultChecked color="default"
-                   checked={props.completed}
-                   onChange={() => console.log('Changed!')}/>
-            <p>{props.text}</p>
+                color="default"
+                checked={props.item.completed}
+                onChange = {() => props.handleChange(props.item.id)}/>
+            <p>{props.item.text}</p>
         </div>
     )
 }
+
 
 class CheckboxBig extends React.Component {
 
@@ -20,19 +21,35 @@ class CheckboxBig extends React.Component {
         super();
         this.state = {
             todos: todosData,
-        }
+        };
+        this.handleChange = this.handleChange.bind(this)
+    }
 
+    handleChange(id) {
+        this.setState(prevState => {
+            let update = prevState.todos.map(el =>{
+                if (el.id === id) {
+                    el.completed  = !el.completed
+                }
+                return el
+            });
+            return {
+                todos: update
+            }
+        })
     }
 
     render() {
         return (
             <div>
                 {
-                    this.state.todos.map(el =>
+                    this.state.todos.map(item =>
                         <CheckCard
-                            key={el.id}
-                            text={el.text}
-                            completed={el.completed}
+                            item = {item}
+                            key={item.id}
+                            text={item.text}
+                            completed={item.completed}
+                            handleChange={this.handleChange}
                         />
                     )
                 }

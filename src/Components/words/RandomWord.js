@@ -29,7 +29,7 @@ class RandomWord extends React.Component {
                     <li className="wordEN">{this.state.word.wrd}</li>
                     <li className="wordDE">{this.state.word.deu}</li>
                 </ul>
-                <Button variant="raised"
+                <Button variant="contained"
                 onClick = {this.handleClick}>Хочу ещё!</Button>
             </div>
         )
