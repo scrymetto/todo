@@ -8,8 +8,8 @@ function CheckCard(props) {
             <Checkbox
                 color="default"
                 checked={props.item.completed}
-                onChange = {() => props.handleChange(props.item.id)}/>
-            <p>{props.item.text}</p>
+                onChange={() => props.handleChange(props.item.id)}/>
+            <p className={props.item.completed ? "done" : null}>{props.item.text}</p>
         </div>
     )
 }
@@ -27,9 +27,9 @@ class CheckboxBig extends React.Component {
 
     handleChange(id) {
         this.setState(prevState => {
-            let update = prevState.todos.map(el =>{
+            let update = prevState.todos.map(el => {
                 if (el.id === id) {
-                    el.completed  = !el.completed
+                    el.completed = !el.completed
                 }
                 return el
             });
@@ -43,15 +43,30 @@ class CheckboxBig extends React.Component {
         return (
             <div>
                 {
-                    this.state.todos.map(item =>
-                        <CheckCard
-                            item = {item}
-                            key={item.id}
-                            text={item.text}
-                            completed={item.completed}
-                            handleChange={this.handleChange}
-                        />
-                    )
+                    this.state.todos.map(item => {
+                        if (!item.completed) {
+                            return <CheckCard
+                                item={item}
+                                key={item.id}
+                                text={item.text}
+                                completed={item.completed}
+                                handleChange={this.handleChange}
+                            />
+                        }
+                    })
+                }
+                {
+                    this.state.todos.map(item => {
+                    if (item.completed) {
+                    return <CheckCard
+                    item={item}
+                    key={item.id}
+                    text={item.text}
+                    completed={item.completed}
+                    handleChange={this.handleChange}
+                    />
+                }
+                })
                 }
             </div>
         )

@@ -27,7 +27,13 @@ body {
     font-family: Roboto, sans-serif;
     font-weight: 100;
     font-size: 15px;
-    color: #333333;
+    color: black;
+}
+
+.done {
+    color: #cecece;
+    text-decoration: line-through;
+    font-style: italic;
 }
 
 input[type=checkbox] {
