@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import  'typeface-roboto';
 import './App.css';
-import CheckboxBig from './Components/Checkbox'
+import Checkbox from './Components/Checkbox/Checkbox'
 import Greeting from './Components/Greeting'
 import Motivation from './Components/Motivation'
 import RandomWord from './Components/words/RandomWord'
@@ -13,8 +13,8 @@ class App extends Component {
                 <Greeting className="Greeting"/>
                 <div className="Content">
                     <div className="todo-list">
-                        <h2>Список дел:</h2>
-                        <CheckboxBig/>
+                        <h2>Tasks for today:</h2>
+                        <Checkbox/>
                     </div>
                     <div>
                         <RandomWord/>
