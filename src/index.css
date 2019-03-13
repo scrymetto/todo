@@ -63,7 +63,7 @@ input[type=checkbox]:focus {
 }
 
 .Motivation {
-    margin-bottom: 10px;
+
     margin-top: 10px;
     list-style-type: none;
     display: flex;
@@ -74,7 +74,8 @@ input[type=checkbox]:focus {
     font-size: 15px;
     color: #333333;
     text-align: center;
-}
+    flex-shrink: 0;
+    }
 
 .wordList {
     list-style: none;
@@ -105,3 +106,4 @@ input[type=checkbox]:focus {
     align-items: center;
     padding-bottom: 75px;
 }
+
