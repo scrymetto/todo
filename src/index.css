@@ -101,9 +101,16 @@ input[type=checkbox]:focus {
 }
 
 .Content {
-    width: 75%;
+    width: 100%;
     display: flex;
     align-items: center;
     padding-bottom: 75px;
 }
 
+.todo-list-flex {
+    width: 66.6%;
+}
+
+.random-word-flex {
+    width: 33.3%;
+}

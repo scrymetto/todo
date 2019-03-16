@@ -9,50 +9,43 @@ class Checkbox extends React.Component {
     constructor() {
         super();
         this.state = {
-            todos: todosData,
-            current: '',
+            todos: todosData
+        };
+        this.state.todos.reverse();
+        this.textInput = null;
+        this.setTextInputRef = el => {
+            this.textInput = el
         };
         this.handleChange = this.handleChange.bind(this);
-        this.change = this.change.bind(this);
         this.confirm = this.confirm.bind(this);
     }
 
     handleChange(id) {
         this.setState(prevState => {
-            let update = prevState.todos.map(el => {
-                if (el.id === id) {
-                    el.completed = !el.completed
-                }
-                return el
-            });
-            return {
-                todos: update
-            }
-        })
-    }
-
-    change(event) {
-        this.setState(prevState => {
-            let update = event.target.value;
-            return {
-                todos: prevState.todos,
-                current: update,
+            const index = prevState.todos.findIndex(todo => todo.id === id);
+            if (index >= 0) {
+                const el = prevState.todos.splice(index, 1)[0];
+                el.completed = !el.completed;
+                const newState = {
+                    todos: [el, ...prevState.todos]
+                };
+                return Object.assign(prevState, newState);
             }
         })
     }
 
     confirm() {
         this.setState(prevState => {
-            let update = prevState.current;
+            let update = this.textInput.value;
+            this.textInput.value = '';
             let newTask = {
                 id: prevState.todos.length + 1,
                 text: update,
                 completed: false
             };
-            prevState.todos.push(newTask);
+            prevState.todos.splice(0, 0, newTask);
             return {
-                todos: prevState.todos,
-                current: ''
+                todos: prevState.todos
             }
         })
     }
@@ -64,12 +57,7 @@ class Checkbox extends React.Component {
                            type="text"
                            fullWidth
                            label="New task"
-                           value={this.state.current}
-                           onChange={(event) => {
-                               event.persist();
-                               this.change(event);
-                           }
-                           }
+                           InputProps={{inputRef: this.setTextInputRef}}
                 />
                 <Button onClick={this.confirm}>Confirm</Button>
                 {

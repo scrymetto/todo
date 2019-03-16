@@ -13,12 +13,14 @@ class App extends React.Component {
                 <Greeting className="Greeting"/>
 
                 <div className="Content">
-                    <div className="todo-list">
-                        <h2>Tasks for today:</h2>
-                        <Checkbox/>
+                    <div className="todo-list-flex">
+                        <div className="todo-list">
+                            <h2>Tasks for today:</h2>
+                            <Checkbox/>
+                        </div>
                     </div>
 
-                    <div>
+                    <div className="random-word-flex">
                         <RandomWord/>
                     </div>
                 </div>

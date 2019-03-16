@@ -18,7 +18,7 @@ const Greeting = () => {
         greeting = 'evening';
         styles.background = "#4B0082"
     }
-    if (hour >= 22 && hour <= 6) {
+    if (hour >= 22 || hour <= 6) {
         greeting = 'night';
         styles.background = "#2F4F4F"
     }
